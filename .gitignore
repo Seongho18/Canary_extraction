@@ -1,9 +1,10 @@
-data/
 
-!data/build_glove.py
-!data/build_vocab.py
-!data/canary_insertion.py
-!data/example
 
+data/call*
+data/pin*
+data/ATIS*
+data/test*
+data/train*
+data/vocab*
 
 model/results*
