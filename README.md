@@ -72,8 +72,6 @@ __Each model subdirectory contains a breakdown of the instructions__.
 
 Took inspiration from these papers
 
-- [Bidirectional LSTM-CRF Models for Sequence Tagging](https://arxiv.org/abs/1508.01991) by Huang, Xu and Yu
-- [Neural Architectures for Named Entity Recognition](https://arxiv.org/abs/1603.01360) by Lample et al.
 - [End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF](https://arxiv.org/abs/1603.01354) by Ma et Hovy
 
 You can also read [this blog post](https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html).
@@ -98,54 +96,7 @@ As you can see, there's no clear statistical evidence of which of the 2 characte
 
 ---
 
-### `lstm_crf`
 
-__Architecture__
-
-1. [GloVe 840B vectors](https://nlp.stanford.edu/projects/glove/)
-2. Bi-LSTM
-3. CRF
-
-__Related Paper__ [Bidirectional LSTM-CRF Models for Sequence Tagging](https://arxiv.org/abs/1508.01991) by Huang, Xu and Yu
-
-__Training time__ ~ 20 min
-
-|| `train` | `testa` | `testb` | Paper, `testb` |
-|---|:---:|:---:|:---:|:---:|
-|best | 98.45 |93.81 | __90.61__ |  90.10 |
-|best (EMA)| 98.82 | 94.06 | 90.43 | |
-|mean ± std| 98.85 ± 0.22| 93.68 ± 0.12| 90.42 ± 0.10|  |
-|mean ± std (EMA)| 98.71 ± 0.47 | 93.81 ± 0.24 | __90.50__ ± 0.21| |
-|abs. best |   | | 90.61 |  |
-|abs. best (EMA) | |  | 90.75 |  |
-
-
----
-
-### `chars_lstm_lstm_crf`
-
-__Architecture__
-
-1. [GloVe 840B vectors](https://nlp.stanford.edu/projects/glove/)
-2. Chars embeddings
-3. Chars bi-LSTM
-4. Bi-LSTM
-5. CRF
-
-__Related Paper__ [Neural Architectures for Named Entity Recognition](https://arxiv.org/abs/1603.01360) by Lample et al.
-
-__Training time__ ~ 35 min
-
-|| `train` | `testa` | `testb` | Paper, `testb` |
-|---|:---:|:---:|:---:|:---:|
-|best| 98.81 | 94.36 | 91.02 | 90.94 |
-|best (EMA) |98.73 | 94.50 | __91.14__ | |
-|mean ± std | 98.83 ± 0.27| 94.02 ± 0.26| 91.01 ± 0.16 |  |
-|mean ± std (EMA) | 98.51 ± 0.25| 94.20 ± 0.28| __91.21__ ± 0.05 |  |
-|abs. best |   | |91.22 | |
-|abs. best (EMA) | |   | 91.28 |  |
-
----
 
 ### `chars_conv_lstm_crf`
 
